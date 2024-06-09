@@ -10,10 +10,12 @@ const CardsEstilizada = styled.div`
   margin-bottom: 50px;
 `;
 
-export default function Cards({ children }) {
+const Cards = ({ children }) => {
     return (
         <CardsEstilizada>
             {children}
         </CardsEstilizada>
     )
 }
+
+export default Cards;

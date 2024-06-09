@@ -4,7 +4,7 @@ const ImgEstilizada = styled.img`
   width: 100vw;
 `;
 
-export default function Banner({ tipo }) {
+const Banner = ({ tipo }) => {
   return (
     <ImgEstilizada
       src={`/imagens/banner-${tipo}.png`}
@@ -12,3 +12,5 @@ export default function Banner({ tipo }) {
     />
   );
 }
+
+export default Banner

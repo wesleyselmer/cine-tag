@@ -7,6 +7,8 @@ const H1Estilizado = styled.h1`
   text-align: center;
 `;
 
-export default function Titulo({ titulo }) {
+const Titulo = ({ titulo }) => {
   return <H1Estilizado>{titulo}</H1Estilizado>;
 }
+
+export default Titulo;

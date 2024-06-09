@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const FavoritosContext = createContext();
 FavoritosContext.displayName = "Favoritos";
 
-export default function FavoritosProvider({ children }) {
+const FavoritosProvider = ({ children }) => {
     const [favorito, setFavorito] = useState([]);
 
     return (
@@ -13,6 +13,8 @@ export default function FavoritosProvider({ children }) {
         </FavoritosContext.Provider>
     )
 }
+
+export default FavoritosProvider;
 
 export function useFavoritoContext() {
     const { favorito, setFavorito } = useContext(FavoritosContext);
@@ -27,7 +29,7 @@ export function useFavoritoContext() {
             return setFavorito(novaLista);
         }
 
-        novaLista.filter((item) => item.id !== novoFavorito.id);
+        novaLista = favorito.filter((item) => item.id !== novoFavorito.id);
         return setFavorito(novaLista);
     }
 

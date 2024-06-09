@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import LinkEstilizado from "@/components/LinkEstilizado";
 
 const HeaderEstilizado = styled.header`
   background-color: #000000;
@@ -18,21 +18,7 @@ const UlEstilizado = styled.ul`
   gap: 50px;
 `;
 
-const LinkEstilizado = styled(Link)`
-  &&& {color: #f0f0f0;
-  font-weight: 400;
-  font-style: 18px;
-  text-align: center;
-  text-decoration: none;
-  list-style-type: none;
-  width: auto;
-
-  &:focus, &:hover, &:visited, &:link, &:active {
-  text-decoration: none;
-  list-style-type: none;
-  }}`
-
-export default function Cabecalho() {
+const Cabecalho = () => {
   return (
     <HeaderEstilizado>
       <img src="/imagens/logo.png"></img>
@@ -40,10 +26,10 @@ export default function Cabecalho() {
         <nav>
           <UlEstilizado>
             <li>
-              <LinkEstilizado to={"/"}>Home</LinkEstilizado>
+              <LinkEstilizado to={"/"} $cabecalho={true}>Home</LinkEstilizado>
             </li>
             <li>
-              <LinkEstilizado to={"/favoritos"}>Favoritos</LinkEstilizado>
+              <LinkEstilizado to={"/favoritos"} $cabecalho={true}>Favoritos</LinkEstilizado>
             </li>
           </UlEstilizado>
         </nav>
@@ -51,3 +37,5 @@ export default function Cabecalho() {
     </HeaderEstilizado>
   )
 }
+
+export default Cabecalho

@@ -7,10 +7,12 @@ const DivEstilizada = styled.div`
     padding: 20px;
 `
 
-export default function Rodape() {
+const Rodape = () => {
     return(
         <DivEstilizada>
             <h3>Wesley Selmer - 2024</h3>
         </DivEstilizada>
     )
 }
+
+export default Rodape;

@@ -1,8 +1,8 @@
-import Titulo from "../../components/Titulo";
+import Titulo from "@/components/Titulo";
 import Banner from "/src/components/Banner";
-import cards from "../../../db.json";
-import Card from "../../components/Card";
-import Cards from "../../components/Cards";
+import cards from "@/json/db.json";
+import Card from "@/components/Card";
+import Cards from "@/components/Cards";
 
 
 const Home = () => {
