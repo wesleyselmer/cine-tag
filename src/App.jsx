@@ -1,17 +1,26 @@
-import EstilosGlobais from "./components/EstilosGlobais";
-import PaginaErro from "./pages/PaginaErro";
-import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import EstilosGlobais from "./components/EstilosGlobais";
+import Cabecalho from "./components/Cabecalho";
+import Home from "./pages/Home";
+import Favoritos from "./pages/Favoritos";
+import PaginaErro from "./pages/PaginaErro";
+import Rodape from "./components/Rodape";
+import FavoritosProvider from "./components/context/FavoritosContext";
 
 export default function App() {
   return (
     <>
-      <EstilosGlobais />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<PaginaErro />} />
-        </Routes>
+        <EstilosGlobais />
+        <Cabecalho />
+        <FavoritosProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favoritos" element={<Favoritos />} />
+            <Route path="*" element={<PaginaErro />} />
+          </Routes>
+        </FavoritosProvider>
+        <Rodape />
       </BrowserRouter>
     </>
   );

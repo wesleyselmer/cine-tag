@@ -7,7 +7,7 @@ const ImgEstilizada = styled.img`
 export default function Banner({ tipo }) {
   return (
     <ImgEstilizada
-      src={`/imagens/banner-${tipo.toLowerCase()}.png`}
+      src={`/imagens/banner-${tipo}.png`}
       alt={`Banner da página ${tipo}`}
     />
   );

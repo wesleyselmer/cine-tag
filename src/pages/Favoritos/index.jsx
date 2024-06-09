@@ -5,11 +5,11 @@ import Card from "../../components/Card";
 import Cards from "../../components/Cards";
 
 
-const Home = () => {
+const Favoritos = () => {
   return (
     <>
-      <Banner tipo="home" />
-      <Titulo titulo="Um lugar para guardar seus vídeos e filmes!" />
+      <Banner tipo="favoritos" />
+      <Titulo titulo="Meus Favoritos" />
       <Cards>
         {cards.map((card) => {
           return <Card key={card.id} card={card} />;
@@ -19,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Favoritos;
