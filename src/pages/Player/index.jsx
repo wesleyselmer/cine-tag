@@ -1,24 +1,30 @@
-import Titulo from "@/components/Titulo";
-import Banner from "@/components/Banner";
 import { useParams } from "react-router-dom";
-import cards from "@/json/db.json";
+import Banner from "@/components/Banner";
+import Titulo from "@/components/Titulo";
 import Cards from "@/components/Cards";
 import PaginaErro from "@/pages/PaginaErro";
+import { useEffect, useState } from "react";
 
 const Player = () => {
+  const [card, setCard] = useState();
   const params = useParams();
-  const card = cards.find((card) => {
-    return card.id === Number(params.id);
-  });
+
+  useEffect(() => {
+    fetch(
+      `https://my-json-server.typicode.com/wesleyselmer/cine-tag-api/videos?id=${params.id}`
+    )
+      .then(resposta => resposta.json())
+      .then(dados => setCard(...dados));
+  }, []);
 
   if (!card) {
-    return <PaginaErro />
+    return <PaginaErro />;
   } else {
     return (
       <>
         <Banner tipo="player" />
         <Titulo titulo="Player" />
-        {card ?
+        {card ? (
           <Cards>
             <iframe
               width="560"
@@ -34,13 +40,14 @@ const Player = () => {
               picture-in-picture; 
               web-share
             "
-            >
-            </iframe>
+            ></iframe>
           </Cards>
-          : ''}
+        ) : (
+          ""
+        )}
       </>
     );
-  };
-}
+  }
+};
 
 export default Player;

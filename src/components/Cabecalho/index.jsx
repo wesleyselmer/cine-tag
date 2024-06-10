@@ -21,21 +21,27 @@ const UlEstilizado = styled.ul`
 const Cabecalho = () => {
   return (
     <HeaderEstilizado>
-      <img src="/imagens/logo.png"></img>
+      <LinkEstilizado to={"/"}>
+        <img src="/imagens/logo.png"></img>
+      </LinkEstilizado>
       <DivEstilizado>
         <nav>
           <UlEstilizado>
             <li>
-              <LinkEstilizado to={"/"} $cabecalho={true}>Home</LinkEstilizado>
+              <LinkEstilizado to={"/"} $cabecalho={true}>
+                Home
+              </LinkEstilizado>
             </li>
             <li>
-              <LinkEstilizado to={"/favoritos"} $cabecalho={true}>Favoritos</LinkEstilizado>
+              <LinkEstilizado to={"/favoritos"} $cabecalho={true}>
+                Favoritos
+              </LinkEstilizado>
             </li>
           </UlEstilizado>
         </nav>
       </DivEstilizado>
     </HeaderEstilizado>
-  )
-}
+  );
+};
 
-export default Cabecalho
+export default Cabecalho;

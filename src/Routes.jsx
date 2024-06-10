@@ -9,7 +9,6 @@ const AppRoutes = () => {
   return (
     <>
       <BrowserRouter>
-        <PaginaBase>
           <Routes>
             <Route path="/" element={<PaginaBase />}>
               <Route index element={<Home />} />
@@ -18,7 +17,6 @@ const AppRoutes = () => {
               <Route path="*" element={<PaginaErro />} />
             </Route>
           </Routes>
-        </PaginaBase>
       </BrowserRouter >
     </>
   );
